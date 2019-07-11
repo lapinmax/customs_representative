@@ -3,5 +3,5 @@
 "mappings": "AAAA,IAAI;EACF,gBAAgB,EAAE,OAAO",
 "sources": ["../sass/main.sass"],
 "names": [],
-"file": "main.css"
+"file": "style.css"
 }

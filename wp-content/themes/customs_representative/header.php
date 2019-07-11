@@ -1,60 +1,102 @@
-<?php
-/**
- * The header for our theme
- *
- * This is the template that displays all of the <head> section and everything up until <div id="content">
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package Customs_representative
- */
-
-?>
 <!doctype html>
-<html <?php language_attributes(); ?>>
+<html lang="en">
 <head>
-	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="profile" href="https://gmpg.org/xfn/11">
-  <link rel="stylesheet" href="assets/sass/main.sass">
-  <link rel="stylesheet" href="assets/css/main.css">
-
-	<?php wp_head(); ?>
+  <title>Title</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="msapplication-TileImage" content="favicon/mstile-144x144.png">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+  <!-- Fonts Google Roboto -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap&subset=cyrillic" rel="stylesheet">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="<?php bloginfo('template_directory')?>/assets/css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="<?php bloginfo('template_directory')?>/assets/css/style.css">
 </head>
+<body>
+<div class="container col-md">
+  <div class="top-nav">
+    <div class="row">
+      <div class="col-md">
+        <div class="address">
+          <div class="text-style float-right">
+            <div class="address-img float-left">
+              <img src="<?php bloginfo('template_directory')?>/assets/img/top-line/loc.png" alt="loc">
+            </div>
+            <a href="#">Москва, ул Братиславская, д.6, оф. 51-52</a>
+            <p> Свидетельство № 0082/05 от 15.11.2016</p>
+          </div>
+        </div>
+      </div>
+      <!-- address -->
 
-<body <?php body_class(); ?>>
-<div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'customs-representative' ); ?></a>
+      <div class="phone">
+        <div class="phone-content text-style float-right">
+          <div class="phone-img float-left">
+            <img src="<?php bloginfo('template_directory')?>/assets/img/top-line/phone.png" alt="phone">
+          </div>
+          <p> +7 (495) 640-62-06</p>
+          <a href="#">Заказать звонок</a>
+        </div>
+      </div>
+      <!-- phone -->
 
-	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$customs_representative_description = get_bloginfo( 'description', 'display' );
-			if ( $customs_representative_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $customs_representative_description; /* WPCS: xss ok. */ ?></p>
-			<?php endif; ?>
-		</div><!-- .site-branding -->
+      <div class="email">
+        <div class="text-style float-right">
+          <div class="email-img float-left">
+            <img src="<?php bloginfo('template_directory')?>/assets/img/top-line/mail.png" alt="mail">
+          </div>
+          <a href="#">info@sezs.ru</a>
+        </div>
+      </div>
+      <!-- email -->
 
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'customs-representative' ); ?></button>
-			<?php
-			wp_nav_menu( array(
-				'theme_location' => 'menu-1',
-				'menu_id'        => 'primary-menu',
-			) );
-			?>
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
+      <div class="col-md">
+        <div class="search">
+          <div class="form-group has-search">
+            <input type="text" class="form-control form-control-sm ml-3 w-65" placeholder="Поиск по сайту">
+            <span class="fa fa-search form-control-feedback"></span>
+          </div>
+        </div>
+      </div>
+      <!-- search -->
 
-	<div id="content" class="site-content">
+    </div>
+    <!--  .row -->
+  </div>
+  <!-- .top-nav-->
+
+  <div class="top-nav_menu">
+    <nav class="navbar navbar-expand-sm navbar-light bg-light">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="mx-auto d-sm-flex d-block flex-sm-nowrap">
+        <div class="collapse navbar-collapse text-center" id="navbarTogglerDemo03">
+            <?php $args = array(
+                'menu'            => '',
+                'container'       => 'ul',
+                'container_class' => 'navbar-nav',
+                'container_id'    => '',
+                'menu_class'      => 'navbar-nav',
+                'menu_id'         => '',
+                'echo'            => true,
+                'fallback_cb'     => 'wp_page_menu',
+                'before'          => '',
+                'after'           => '',
+                'link_before'     => '',
+                'link_after'      => '',
+                'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+                'item_spacing'    => 'preserve',
+                'depth'           => 0,
+                'walker'          => '',
+                'theme_location'  => '',
+            );
+            wp_nav_menu($args);
+            ?>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <!-- .top-nav_menu -->
